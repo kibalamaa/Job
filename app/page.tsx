@@ -1,46 +1,36 @@
-import Button from "./components/Button";
-import Glo from "./../public/globe.svg";
-import Image from "next/image";
-const Joblist = () => {
-  return (
-    <div className="flex flex-row w-[700px] rounded-2xl border-1 border-gray-300">
-      <div className="flex flex-col items-center w-[100px] pt-3">
-        <Image className='mt-1' src={Glo} width={50} height={10} alt="Hero image"/>
-      </div>
-      <div className="flex flex-col  w-[600px] h-[200px]">
-        <div className="flex flex-col h-[30%] w-full pt-3">
-          <h1 className="font-bold">Social Media Assistant</h1>
-          <div className="flex gap-2 text-gray-500 text-sm">
-            <p className="">Sed ut perspiciatis</p>
-            &#x2022; 
-            <p className="">omnisequi nesciunt.</p>
-          </div>
-          
-        </div>
+import JobList from "./components/JobList";
+import globe from "./../public/globe.svg";
 
-        <div className="pr-10 h-[40%] ">
-          <p className="text-sm text-gray-700">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. beatae vitae dicta sunt explicabo
-          </p>
-        </div>
-        <div className="flex flex-row justify-start  h-[30%] gap-2 items-center bg">
-          <button className="bg-green-50 text-green-400 text-sm rounded-xl px-3 py-1">
-            In Person
-          </button>
-          <button className="border-1 border-amber-300 text-amber-300 text-sm rounded-xl px-3 py-[1.5]">
-            Education
-          </button>
-          <button className="border-1 border-blue-800 text-blue-800 text-sm rounded-xl px-4 py-[1.5]">
-            IT
-          </button>
-        </div>
-      </div>
+
+
+const page = () => {
+  return (
+    <div className="flex flex-col items-center gap-5">
+      <JobList
+        img_src={globe}
+        role={"Sofs"}
+        company={"sfsdf"}
+        location={"sfsdf"}
+        description={"sfdf"}
+      />
+
+      <JobList
+        img_src={globe}
+        role={"Sofs"}
+        company={"sfsdf"}
+        location={"sfsdf"}
+        description={"sfdf"}
+      />
+
+      <JobList
+        img_src={globe}
+        role={"Sofs"}
+        company={"sfsdf"}
+        location={"sfsdf"}
+        description={"sfdf"}
+      />
     </div>
   );
 };
 
-export default Joblist;
+export default page;

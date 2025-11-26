@@ -1,30 +1,35 @@
-import Button from "./components/Button";
 import Glo from "./../public/globe.svg";
 import Image from "next/image";
-const Joblist = () => {
+import React from "react";
+
+interface JoblistProps {
+    role: string;
+    company: string;
+    location: string;
+    description: string;
+
+}
+
+const Joblist: React.FC<JoblistProps> = ({role, company, location, description }) => {
   return (
-    <div className="flex flex-row w-[700px] rounded-2xl border-1 border-gray-300">
-      <div className="flex flex-col items-center w-[100px] pt-3">
+    <div className="flex flex-row w-[700px] rounded-2xl border-2 border-gray-300">
+      <div className="flex flex-col items-center w-[100px]">
         <Image className='mt-1' src={Glo} width={50} height={10} alt="Hero image"/>
       </div>
       <div className="flex flex-col  w-[600px] h-[200px]">
-        <div className="flex flex-col h-[30%] w-full pt-3">
-          <h1 className="font-bold">Social Media Assistant</h1>
+        <div className="flex flex-col h-[30%] w-full pt-2">
+          <h1>{role}</h1>
           <div className="flex gap-2 text-gray-500 text-sm">
-            <p className="">Sed ut perspiciatis</p>
+            <p className="">{company}</p>
             &#x2022; 
-            <p className="">omnisequi nesciunt.</p>
+            <p className="">{location}.</p>
           </div>
           
         </div>
 
-        <div className="pr-10 h-[40%] ">
+        <div className="pr-4 h-[40%] ">
           <p className="text-sm text-gray-700">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. beatae vitae dicta sunt explicabo
+            {description}
           </p>
         </div>
         <div className="flex flex-row justify-start  h-[30%] gap-2 items-center bg">

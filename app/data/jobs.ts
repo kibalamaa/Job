@@ -18,7 +18,7 @@ export const jobs: JoblistProps[] = [
       "Design and deploy cloud solutions on Azure, improve system reliability, and collaborate on scalable infrastructure.",
   },
   {
-    img_src: "/logos/andela.png",
+    img_src: "/globe.svg",
     role: "Junior Full-Stack Developer",
     company: "Andela",
     location: "Remote",

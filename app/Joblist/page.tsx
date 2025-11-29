@@ -5,7 +5,7 @@ import dropdown from "@/public/down.svg";
 
 const Page = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mt-10">
       <div className="flex flex-col justify-center  w-[700px]">
         <div className="flex flex-col items-center gap-5 ">
           <div className="flex justify-between w-full ">

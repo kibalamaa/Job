@@ -1,7 +1,7 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export interface JoblistProps {
-  img_src: StaticImageData | string;
+  img_src: string;
   role: string;
   company: string;
   location: string;

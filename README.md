@@ -1,7 +1,3 @@
-Got it! Keeping exactly what you gave me, the only thing we need to **add is a “Viewing the Pages” section** so users know how to access them. Here’s the updated README:
-
----
-
 ## Job Listing Application
 
 A simple job listing application built with **Next.js**, **TypeScript**, and **Tailwind CSS**.

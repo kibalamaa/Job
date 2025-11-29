@@ -44,10 +44,10 @@ const JobList: React.FC<JoblistProps> = ({
             In Person
           </button>
           <div className="bg-yellow-200 border-1 border-gray-100 h-[20] py-1"></div>
-          <button className="border-1 border-amber-300 text-amber-300 text-xs rounded-xl px-3 py-[1.5]">
+          <button className="border border-amber-300 text-amber-300 text-xs rounded-xl px-3 py-[1.5]">
             Education
           </button>
-          <button className="border-1 border-blue-800 text-blue-800 text-xs rounded-xl px-4 py-[1.5]">
+          <button className="border border-blue-800 text-blue-800 text-xs rounded-xl px-4 py-[1.5]">
             IT
           </button>
         </div>

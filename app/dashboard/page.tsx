@@ -70,8 +70,8 @@ const Dashboard = () => {
             <Image
               src="location.svg"
               alt="location icon"
-              width={20}
-              height={20}
+              width={40}
+              height={40}
               className="inline-block"
             />
             <p className="text-sm text-gray-600">

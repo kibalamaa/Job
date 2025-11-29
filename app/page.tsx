@@ -1,40 +1,33 @@
-import JobList from "./components/JobList";
-import { jobs } from "@/app/data/jobs";
-import Image from "next/image";
-import dropdown from "../public/down.svg";
+import Link from "next/link";
 
-const Page = () => {
+const HomePage = () => {
   return (
-    <div>
-      <div className="flex flex-col justify-center  w-[700px]">
-        <div className="flex flex-col items-center gap-5 ">
-          <div className="flex justify-between w-full ">
-            <div className="">
-              <h1 className="font-bold text-2xl">Opportunities</h1>
-              <p className="text-sm text-gray-500">
-                Showing {jobs.length} results
-              </p>
-            </div>
-            <div className="text-sm flex items-center gap-1 pr-4">
-              <span className="text-gray-500">Sort by:</span> Most relevant
-              <Image src={dropdown} alt="drop down" width={15} height={15} />
-            </div>
-          </div>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
+      <h1 className="text-4xl font-bold mb-8 text-center">
+        Job Listing Application
+      </h1>
 
-          {jobs.map((job, index) => (
-            <JobList
-              key={index}
-              img_src={job.img_src}
-              role={job.role}
-              company={job.company}
-              location={job.location}
-              description={job.description}
-            />
-          ))}
-        </div>
+      <p className="text-center text-gray-600 mb-10 max-w-xl">
+        Available Pages
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-6">
+        <Link
+          href="/Joblist"
+          className="px-6 py-4 bg-green-50 text-green-600  rounded-lg shadow hover:bg-green-700 hover:text-green-50 transition text-center"
+        >
+          Job list
+        </Link>
+
+        <Link
+          href="/dashboard"
+          className="px-6 py-4 border border-amber-300 text-amber-300 rounded-lg shadow hover:text-amber-700 hover:border-amber-700 transition text-center"
+        >
+          Dashboard
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Page;
+export default HomePage;

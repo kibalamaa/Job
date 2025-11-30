@@ -1,7 +1,3 @@
-Got it! Keeping exactly what you gave me, the only thing we need to **add is a “Viewing the Pages” section** so users know how to access them. Here’s the updated README:
-
----
-
 ## Job Listing Application
 
 A simple job listing application built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
@@ -18,7 +14,7 @@ Each job card includes:
 * Short description
 * Category tags
 
-![job cards](./public/screenshots/joblist.png)
+![job cards](./public/screenshots/jobs.png)
 
 ---
 
@@ -32,7 +28,7 @@ A detailed page containing:
 * When & Where section
 * Sidebar with About, Categories, and Required Skills
 
-![Dashboard](./public/screenshots/dashboard.png)
+![Dashboard](./public/screenshots/jobDetails.png)
 
 ---
 

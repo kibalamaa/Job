@@ -40,13 +40,3 @@ cd job
 npm install
 npm run dev
 ```
-
----
-
-## Viewing the Pages
-
-After running the development server, open your browser at:
-
-* **Opportunities Page:** [http://localhost:3000](http://localhost:3000/Joblist)
-* **Job Description Dashboard:** [http://localhost:3000/dashboard](http://localhost:3000/dashboard)
-

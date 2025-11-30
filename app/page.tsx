@@ -1,33 +1,41 @@
-import Link from "next/link";
+import JobCard from "@/app/components/JobCard"; 
+import { jobs } from "@/app/data/jobs";
+import Image from "next/image";
+import dropdown from "@/public/down.svg"; 
 
-const HomePage = () => {
+const Page = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
-      <h1 className="text-4xl font-bold mb-8 text-center">
-        Job Listing Application
-      </h1>
+    <div className="flex justify-center min-h-screen bg-gray-50 py-10 px-4">
+      
+      <div className="flex flex-col w-full max-w-3xl gap-6">
 
-      <p className="text-center text-gray-600 mb-10 max-w-xl">
-        Available Pages
-      </p>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <h1 className="font-bold text-3xl text-slate-800">Opportunities</h1>
+            <p className="text-sm text-gray-500 mt-1">
+              Showing {jobs.length} results
+            </p>
+          </div>
+          
+          <div className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer hover:text-black">
+            <span className="text-gray-400">Sort by:</span> 
+            <span className="font-medium">Most relevant</span>
+            <Image src={dropdown} alt="dropdown icon" width={16} height={16} />
+          </div>
+        </div>
 
-      <div className="flex flex-col sm:flex-row gap-6">
-        <Link
-          href="/Joblist"
-          className="px-6 py-4 bg-green-50 text-green-600  rounded-lg shadow hover:bg-green-700 hover:text-green-50 transition text-center"
-        >
-          Job list
-        </Link>
-
-        <Link
-          href="/dashboard"
-          className="px-6 py-4 border border-amber-300 text-amber-300 rounded-lg shadow hover:text-amber-700 hover:border-amber-700 transition text-center"
-        >
-          Dashboard
-        </Link>
+        <div className="flex flex-col gap-4">
+          {jobs.map((job, index) => (
+            <JobCard
+              key={index}
+              id={index.toString()} 
+              {...job}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default HomePage;
+export default Page;

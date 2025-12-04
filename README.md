@@ -3,6 +3,7 @@
 A simple job listing application built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
 The app displays a list of job opportunities and a detailed job description dashboard.
 
+## Task 6
 ### **Opportunities Page**
 
 Shows all available job listings.
@@ -31,6 +32,15 @@ A detailed page containing:
 ![Dashboard](./public/screenshots/jobDetails.png)
 
 ---
+
+## Task 7
+### **Opportunities Page**
+
+![job cards](./public/screenshots/jobs7.png)
+
+### **Job Description Dashboard**
+
+![Dashboard](./public/screenshots/jobDetails7.png)
 
 ## Installation & Setup
 

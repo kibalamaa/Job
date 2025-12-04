@@ -1,9 +1,23 @@
+'use client';
+
 import JobCard from "@/app/components/JobCard"; 
-import { jobs } from "@/app/data/jobs";
 import Image from "next/image";
 import dropdown from "@/public/down.svg"; 
+import { useGetAllOpportunitiesQuery, Opportunity } from "./data/api";
+
+
 
 const Page = () => {
+  const { data, error, isLoading } = useGetAllOpportunitiesQuery();
+  if (isLoading) {
+    return <div className="flex justify-center p-10">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="text-red-500 p-10">Error loading opportunities.</div>;
+  }
+  const opportunities: Opportunity[] = data?.data || [];
+
   return (
     <div className="flex justify-center min-h-screen bg-gray-50 py-10 px-4">
       
@@ -13,7 +27,7 @@ const Page = () => {
           <div>
             <h1 className="font-bold text-3xl text-slate-800">Opportunities</h1>
             <p className="text-sm text-gray-500 mt-1">
-              Showing {jobs.length} results
+              Showing {opportunities.length} results
             </p>
           </div>
           
@@ -25,10 +39,9 @@ const Page = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          {jobs.map((job, index) => (
+          {opportunities.map((job) => (
             <JobCard
-              key={index}
-              id={index.toString()} 
+              key={job.id}
               {...job}
             />
           ))}

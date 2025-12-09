@@ -40,7 +40,22 @@ A detailed page containing:
 
 ### **Job Description Dashboard**
 
-![Dashboard](./public/screenshots/jobDetails7.png)
+![Details](./public/screenshots/jobDetails7.png)
+
+## Task 8
+### **Sign Up page**
+
+
+![Next Auth](./public/screenshots/signup.png)
+
+### **Verify page**
+
+![Next Auth](./public/screenshots/verify.png)
+
+### **Sign In page**
+
+![Next Auth](./public/screenshots/signin.png)
+
 
 ## Installation & Setup
 

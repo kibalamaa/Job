@@ -44,15 +44,18 @@ A detailed page containing:
 
 ## Task 8
 ### **Sign Up page**
+***http://localhost:3000/signup***
 
 
 ![Next Auth](./public/screenshots/signup.png)
 
 ### **Verify page**
+***http://localhost:3000/verify-email***
 
 ![Next Auth](./public/screenshots/verify.png)
 
 ### **Sign In page**
+***http://localhost:3000/signin***
 
 ![Next Auth](./public/screenshots/signin.png)
 

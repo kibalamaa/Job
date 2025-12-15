@@ -4,16 +4,19 @@ A simple job listing application built with **Next.js**, **TypeScript**, and **T
 The app displays a list of job opportunities and a detailed job description dashboard.
 
 ## Task 6
+
 ### **Opportunities Page**
+
+**_http://localhost:3000_**
 
 Shows all available job listings.
 Each job card includes:
 
-* Company logo
-* Job role & company
-* Location
-* Short description
-* Category tags
+- Company logo
+- Job role & company
+- Location
+- Short description
+- Category tags
 
 ![job cards](./public/screenshots/jobs.png)
 
@@ -23,17 +26,18 @@ Each job card includes:
 
 A detailed page containing:
 
-* Job description
-* Responsibilities list
-* Ideal candidate section
-* When & Where section
-* Sidebar with About, Categories, and Required Skills
+- Job description
+- Responsibilities list
+- Ideal candidate section
+- When & Where section
+- Sidebar with About, Categories, and Required Skills
 
 ![Dashboard](./public/screenshots/jobDetails.png)
 
 ---
 
 ## Task 7
+
 ### **Opportunities Page**
 
 ![job cards](./public/screenshots/jobs7.png)
@@ -43,22 +47,24 @@ A detailed page containing:
 ![Details](./public/screenshots/jobDetails7.png)
 
 ## Task 8
-### **Sign Up page**
-***http://localhost:3000/signup***
 
+### **Sign Up page**
+
+**_http://localhost:3000/signup_**
 
 ![Next Auth](./public/screenshots/signup.png)
 
 ### **Verify page**
-***http://localhost:3000/verify-email***
+
+**_http://localhost:3000/verify-email_**
 
 ![Next Auth](./public/screenshots/verify.png)
 
 ### **Sign In page**
-***http://localhost:3000/signin***
+
+**_http://localhost:3000/signin_**
 
 ![Next Auth](./public/screenshots/signin.png)
-
 
 ## Installation & Setup
 

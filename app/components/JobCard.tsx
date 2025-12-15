@@ -23,9 +23,22 @@ const JobCard: React.FC<Opportunity> = (props) => {
 
         <div className="flex flex-col grow gap-3">
           <div>
-            <h2 className="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
-              {props.title}
-            </h2>
+            <div className="flex justify-between ">
+              <h2 className="font-bold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
+                {props.title}
+              </h2>
+
+              <button>
+                <Image
+                  src={
+                    props.isBookmarked ? "/bookmarkSolid.svg" : "/bookmark.svg"
+                  }
+                  alt="bookmark"
+                  width={20}
+                  height={20}
+                />
+              </button>
+            </div>
             <div className="flex items-center gap-2 text-gray-500 text-sm mt-1">
               <span className="font-medium">{props.orgName}</span>
               <span className="h-1 w-1 rounded-full bg-gray-400"></span>

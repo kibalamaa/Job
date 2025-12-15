@@ -11,21 +11,21 @@ const OTPInput: React.FC<OTPInputProps> = ({ length = 4, onComplete }) => {
   const [otp, setOtp] = useState<string[]>(new Array(length).fill(""));
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  // Notify parent whenever OTP changes
+  // notify  OTP changes
   useEffect(() => {
     onComplete(otp.join(""));
   }, [otp, onComplete]);
 
   const handleChange = (element: HTMLInputElement, index: number) => {
     const value = element.value;
-    if (isNaN(Number(value))) return; // Only allow numbers
+    if (isNaN(Number(value))) return; 
 
     const newOtp = [...otp];
-    // Take the last character entered (in case multiple chars exist)
+    // consider last character entered
     newOtp[index] = value.substring(value.length - 1);
     setOtp(newOtp);
 
-    // Focus next input if value exists
+    // focus next input
     if (value && index < length - 1) {
       inputRefs.current[index + 1]?.focus();
     }
@@ -34,13 +34,13 @@ const OTPInput: React.FC<OTPInputProps> = ({ length = 4, onComplete }) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
     if (e.key === "Backspace") {
       if (!otp[index] && index > 0) {
-        // If empty, move back and delete previous
+        // delete previous
         const newOtp = [...otp];
         newOtp[index - 1] = ""; 
         setOtp(newOtp);
         inputRefs.current[index - 1]?.focus();
       } else {
-        // Just clear current
+        // clear current
         const newOtp = [...otp];
         newOtp[index] = "";
         setOtp(newOtp);
@@ -58,7 +58,7 @@ const OTPInput: React.FC<OTPInputProps> = ({ length = 4, onComplete }) => {
         newOtp[i] = val;
       });
       setOtp(newOtp);
-      // Focus the last filled input
+      // focus on last input
       inputRefs.current[Math.min(pastedData.length, length - 1)]?.focus();
     }
   };

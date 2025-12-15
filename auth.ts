@@ -8,44 +8,69 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
+  session: {
+    strategy: "jwt",
+  },
+
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
+
     CredentialsProvider({
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
+
       async authorize(credentials) {
-        try {
-          const res = await fetch("https://akil-backend.onrender.com/login", {
-            method: "POST",
-            body: JSON.stringify({
-              email: credentials.email,
-              password: credentials.password,
-            }),
-            headers: { "Content-Type": "application/json" },
-          });
-
-          const user = await res.json();
-
-          if (res.ok && user?.data?.accessToken) {
-            return {
-              ...user.data, 
-              accessToken: user.data.accessToken, 
-              email: credentials.email 
-            };
-          }
+        if (!credentials?.email || !credentials?.password) {
           return null;
-        } catch (e) {
+        }
+
+        try {
+          const res = await fetch(
+            "https://akil-backend.onrender.com/login",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                email: credentials.email,
+                password: credentials.password,
+              }),
+            }
+          );
+
+          const data = await res.json();
+          console.log("LOGIN STATUS:", res.status);
+          console.log("LOGIN RESPONSE:", data);
+
+          if (!res.ok || !data?.data?.accessToken) {
+            throw new Error(data?.message || "Login failed");
+          }
+
+
+          return {
+            id: data.data.id,
+            name: data.data.name,
+            email: data.data.email,
+            role: data.data.role,
+            // JWT
+            accessToken: data.data.accessToken, 
+            refreshToken: data.data.refreshToken,
+            profileComplete: data.data.profileComplete,
+            profileStatus: data.data.profileStatus,
+          };
+        } catch (error) {
+          console.error("Login error:", error);
           return null;
         }
       },
     }),
   ],
+
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
@@ -54,15 +79,17 @@ export const {
       }
       return token;
     },
+
     async session({ session, token }) {
-      if (token) {
+      if (token && session.user) {
         (session as any).accessToken = token.accessToken;
-        (session as any).user.role = token.role;
+        (session.user as any).role = token.role;
       }
       return session;
     },
   },
+
   pages: {
-    signIn: "/signin", 
+    signIn: "/signin",
   },
 });
